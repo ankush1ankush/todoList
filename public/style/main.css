@@ -1,0 +1,79 @@
+body{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 95vh;
+    background-color:#EEEEEE;
+    background-image: -webkit-linear-gradient(65deg, #222 50%,#EEEEEE 50%);
+    min-height: 1000px;
+}
+
+.box{
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    max-width: 400px;
+    margin: 50px auto;
+    
+}
+.box :first-child{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FFFFFF;
+    min-height: 70px;
+    min-width:  400px;
+}
+
+
+.Checkbox{
+   
+ margin: 1.5em !important;
+   
+  
+   
+}
+p{
+    
+    font-size: 20px;
+    padding: 2rem;
+    margin-bottom: 0px;
+    font-family: 'Libre Baskerville', serif;
+}
+.Inputform{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    min-height: 70px;
+    min-width:  400px;
+}
+.inputText{
+    width: 311px;
+    height: 70px;
+    font-size:20px ;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    background: transparent;
+    border: 0px;
+}
+.inputButton{
+    
+    font-size: 40px;
+    max-height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    
+    
+}
+form{
+    background-color: #FFFFFF;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}

@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+<% if (locals.check) { %>
+    <div class="box">
+   <%for(var i=0;i<todayList.length;i++){%>
+    <div class ="item">
+    <input class="Checkbox" type="checkbox"  ><p><%=todayList[i]%></p>
+    </div> 
+    <%}%>
+    
+    <form action="/" class="Inputform" method="post">
+      <input type="text" class="inputText" name="newItem" placehodler="New Item"><button  class="inputButton" type="submit" name="list">+</button>
+    </form>
+ 
+  </div>
+<% } else { %>
+
+<% } %>
+ 
+<%- include('partials/footer.ejs') %>
