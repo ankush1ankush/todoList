@@ -2,29 +2,36 @@
 <% if (locals.check) { %>
     <div class="box heading"><h1><%=day%>, <%=month%> <%=date%></h1></div>  
     <div class="box " >
-   <%for(var i=0;i<todayList.length;i++){%>
-    <div class ="item">
-    <input class="Checkbox" type="checkbox"  ><p><%=todayList[i]%></p>
-    </div> 
-    <%}%>
+   <%todayList.forEach(  element => {%>
+    
+      <form class ="item" action="/delete" method="post">
+      <input type="hidden" name="listName" value="todayList">
+     <input class="Checkbox " type="checkbox" onchange="this.form.submit()" name="checkbox" value="<%=element._id%>"  ><p><%=element.name%></p>
+     
+     </form>
+   
+    <%})%>
   
     <form action="/" class="Inputform" method="post">
-      <input type="text" class="inputText" name="newItem" placeholder="New Item"><button  class="inputButton" type="submit" name="list">+</button>
+      <input type="text" class="inputText" name="newItem" placeholder="New Item"><button  class="inputButton"  type="submit" value="todayList" name="listName">+</button>
     </form>
    
   </div>
   <% } else { %>
-    <div class="box heading"><h1>Work List</h1></div>
+    <div class="box heading"><h1><%=listTitle%></h1></div>
       
     <div class="box">
-   <%for(var i=0;i<todayList.length;i++){%>
-    <div class ="item">
-    <input class="Checkbox" type="checkbox"  ><p><%=todayList[i]%></p>
-    </div>
-    <%}%>
+   <%todayList.forEach(  element => {%>
+   
+      <form class ="item" action="/delete" method="post">
+        <input type="hidden" name="listName" value="<%=listTitle%>">
+        <input class="Checkbox" type="checkbox" onchange="this.form.submit()" name="checkbox" value="<%=element._id%>"><p><%=element.name%></p>
+        </form>
+    
+    <%})%>
   
-    <form action="/work" class="Inputform" method="post">
-      <input type="text" class="inputText" name="newItem" placeholder="New Item"><button  class="inputButton" type="submit" name="list">+</button>
+    <form action="/"  class="Inputform" method="post">
+      <input type="text" class="inputText" name="newItem" placeholder="New Item"><button  class="inputButton" type="submit" value="<%=listTitle%>" name="listName">+</button>
     </form>
    
   </div>
